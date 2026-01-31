@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Heart Runner</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="app-bg">
+  <div class="container py-3">
+
+    <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+      <div>
+        <div class="title fw-bold">Heart Runner</div>
+        <div class="small text-muted">Kumpulin 10 hati. Rintangan santai. Tap JUMP buat lompat.</div>
+      </div>
+
+      <div class="hud-pill">
+        <span id="hudHearts">❤️ 0/10</span>
+        <span class="dot">•</span>
+        <span id="hudStatus">Main!</span>
+      </div>
+    </div>
+
+    <div class="game-wrap">
+      <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <div class="controls mt-3">
+      <button id="btnJump" class="btn btn-primary btn-lg w-100 py-3">
+        ⬆️ JUMP
+      </button>
+      <button id="btnRestart" class="btn btn-light w-100 mt-2">
+        Restart (auto start)
+      </button>
+
+      <div class="small text-dark mt-2">
+        Desktop: tekan <kbd>Space</kbd>.
+      </div>
+    </div>
+  </div>
+
+  <!-- Win Modal -->
+  <div class="modal fade" id="winModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header">
+          <h5 class="modal-title text-success fw-bold">Adek Berhasil!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="winDesc" class="mb-0">
+            Maaf ya mas persulit balikannya dengan cara adek harus mainan game dulu, haha. Adekk, karena game 
+            yang mas buat ga bisa secara langsung adek balas di sini, tapi kalo adek memang mainin game ini, 
+            kabarin ke mas ya cantik? Do you really want to be mine again, adek? And are you sure with what ever
+            your choice is? I'll be waiting for your answer di roomchat ya adek.
+          </p>
+        </div>
+        <!-- GAMBAR + CAPTION -->
+        <figure class="mb-3 text-center">
+         
+          <img
+            src="img/win.jpg"
+            alt="Confession"
+            class="img-fluid rounded-4 shadow-sm"
+            style="max-height: 240px; object-fit: cover; width: 100%;"
+          />
+          <figcaption class="small text-muted mt-2">
+            Will you be mine again, cantik? 
+          </figcaption>
+        </figure>
+        <div class="modal-footer">
+          <button id="btnPlayAgain" type="button" class="btn btn-success" data-bs-dismiss="modal">
+            Main lagi
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
